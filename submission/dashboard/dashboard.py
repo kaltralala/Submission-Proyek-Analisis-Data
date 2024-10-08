@@ -61,7 +61,13 @@ max_date = all_df["order_purchase_timestamp"].max()
 with st.sidebar:
     # Use relative path or environment variable for logo
     logo_path = os.environ.get('LOGO_PATH', 'logo.png')
-    st.image(logo_path)
+    
+    # Try to load the logo, if it fails, display a text message instead
+    try:
+        st.image("https://raw.githubusercontent.com/kaltralala/Submission-Proyek-Analisis-Data/refs/heads/main/submission/assets/logo.png")
+    except Exception as e:
+        st.write("E-Commerce Logo")
+        st.write(f"(Note: Unable to load logo image. Error: {str(e)})")
     
     st.header("Filter by Date :spiral_calendar_pad:")
     start_date, end_date = st.date_input(
