@@ -1,0 +1,4 @@
+Library yang digunakan dalam analisis data yaitu:
+1. Pandas
+2. Matplotlib
+3. Seaborn
